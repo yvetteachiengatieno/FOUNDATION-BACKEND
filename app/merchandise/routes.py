@@ -68,3 +68,12 @@ def save_merchindise():
   )
   merchandise.save()
   return render_template('merchandise/new.html', message="{} saved successfuly".format(merchandise.name))
+
+
+@blueprint.route("/run-seed")
+def run_seed():
+  if not Merchandise.query.filter_by(id=1).first():
+    import app.scripts.seed
+    return "Database seed complete"
+  else: 
+    return "Nothing to run"
