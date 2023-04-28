@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Cookieshop | Checkout{% endblock %}
+
+{% block body %}
+<h1>Checkout</h1>
+<div class="container">
+{% if message %}
+<p style="color: green;">{{ message }}</p>
+{% endif %}
+{% if error %}
+<p style="color: tomato;">{{ error }}</p>
+{% endif %}
+<form method="POST">
+    <h2>Your Address:</h2>
+    <div>
+        <input type="text" name="name" id="name" placeholder="Merch name">
+    </div>
+    <div>
+        <textarea id="description" name="description" rows="4"
+            cols="200"></textarea>
+    </div>
+    <div>
+        <input type="number" name="price" id="price" placeholder="price">
+    </div>
+    <input type="submit" value="Submit Order">
+
+</form>
+</div>
+{% endblock %}

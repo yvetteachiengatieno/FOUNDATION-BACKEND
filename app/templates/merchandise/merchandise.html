@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}The WEEKEND Merch {% endblock %}
+
+{% block body %}
+<h1>hello</h1>
+
+<a href="">
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <a href="/merchandise/{{ merchandise.id }}"><p>{{ merchandise.name }}</p></a>
+            <p>{{ merchandise.price}}</p>
+            <p class="card-text">{{ merchandise.description }}</p>
+        </div>
+    </div>
+</a>
+
+{% endblock %}

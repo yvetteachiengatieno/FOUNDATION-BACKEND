@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Cookieshop{% endblock %}
+
+{% block body %}
+    <p>{{ item.name }}</p> 
+
+    <p class="card-text">{{ item.description }}</p>
+    <form action="" method="post">
+        <a href="{{url_for('merchandise.show_edit_item', id=item.id)}}">Edit</a>
+    </form>
+        
+    <form action="{{url_for('merchandise.delete_item')}}" method="POST">
+        <input name="id" value="{{ item.id }}" type="hidden">
+        <button type="sub
+        ">delete</button>
+    </form>
+{% endblock %}
