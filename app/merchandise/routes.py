@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from app.merchandise.models import Merchandise
+from .models import Merchandise
 
 blueprint = Blueprint('merchandise', __name__)
 
