@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from app.merchandise.models import Merchandise
-from .models import Merchandise
 
 blueprint = Blueprint('merchandise', __name__)
 
@@ -37,9 +36,9 @@ def delete_item():
   return redirect(url_for("merchandise.index"))
 
 @blueprint.route('/merchandise')
-def index():
+def merchandise():
   merchandise = Merchandise.query.all()
-  return render_template('merchandise/index.html', merchandise=merchandise)
+  return render_template('merchandise/merchandise.html', merchandise=merchandise)
 
 @blueprint.route('/merchandise/<id>')
 def item(id):

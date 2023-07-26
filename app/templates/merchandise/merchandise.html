@@ -3,17 +3,30 @@
 {% block title %}The WEEKEND Merch {% endblock %}
 
 {% block body %}
+{{super()}}
 <h1>hello</h1>
 
-<a href="">
+<!-- <a href="">
     <div class="card" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
             <a href="/merchandise/{{ merchandise.id }}"><p>{{ merchandise.name }}</p></a>
-            <p>{{ merchandise.price}}</p>
+            <p>merch price</p>
             <p class="card-text">{{ merchandise.description }}</p>
         </div>
     </div>
-</a>
+</a> -->
+<div>
+    
+    {% for item in merchandise%}
+    <div class="card">
+        <p>{{item.id}}</p>
+        <p>{{item.name}}</p>
+        <p>{{item.description}}</p>
+        <a href="/edit">edit</a>
+    </div>
+    {% endfor%}
+
+</div>
 
 {% endblock %}
