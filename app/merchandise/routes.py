@@ -36,9 +36,9 @@ def delete_item():
   return redirect(url_for("merchandise.index"))
 
 @blueprint.route('/merchandise')
-def merchandise():
+def index():
   merchandise = Merchandise.query.all()
-  return render_template('merchandise/merchandise.html', merchandise=merchandise)
+  return render_template('merchandise/index.html', merchandise=merchandise)
 
 @blueprint.route('/merchandise/<id>')
 def item(id):
